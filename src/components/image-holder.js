@@ -7,13 +7,18 @@
  */
 
 import React, {useState, useCallback, useMemo} from "react";
+import useTensorflow from "../core/use-tensorflow";
+
 import {Image} from "react-bootstrap";
+
+const DEFAULT_IMAGE = "https://dummyimage.com/640x360/ddd/888";
 
 const ImageHolder = () => {
     const [isDraggedOver, setDraggedOver] = useState(false);
-    const [image, setImage] = useState(
-        "https://dummyimage.com/640x360/ddd/888",
-    );
+    const [image, setImage] = useState(DEFAULT_IMAGE);
+    const [, predictions] = useTensorflow(image !== DEFAULT_IMAGE && image);
+
+    console.log("predictions:", predictions);
 
     const fileReader = useMemo(() => {
         const reader = new FileReader();
