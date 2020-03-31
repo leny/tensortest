@@ -9,6 +9,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import Root from "./components/root";
 
 const $app = document.querySelector("#app");

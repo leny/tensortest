@@ -7,7 +7,16 @@
  */
 
 import React from "react";
+import {Container, Row, Col} from "react-bootstrap";
 
-const Root = () => <p>{"Hello world!"}</p>;
+const Root = () => (
+    <Container fluid className={"mt-3"}>
+        <Row>
+            <Col sm={{span: 4, offset: 4}}>
+                <p>{"Hello world!"}</p>
+            </Col>
+        </Row>
+    </Container>
+);
 
 export default Root;
