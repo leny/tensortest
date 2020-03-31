@@ -57,6 +57,17 @@ const ImageHolder = () => {
         setDraggedOver(false);
     }, []);
 
+    let $feedback;
+
+    if (image !== DEFAULT_IMAGE && predictions.length === 0) {
+        $feedback = (
+            <>
+                <small>{"No result."}</small>
+                <br />
+            </>
+        );
+    }
+
     return (
         <div className={"text-center"}>
             <figure
@@ -71,6 +82,7 @@ const ImageHolder = () => {
                     predictions={predictions}
                 />
                 <figcaption>
+                    {$feedback}
                     {analyzing
                         ? "Analyzing image…"
                         : "Drop an image to analyse"}
