@@ -511,4 +511,4 @@ var e=require("buffer").Buffer;Object.defineProperty(exports,"__esModule",{value
 },{"react":"n8MK","react-bootstrap":"lvE3","./image-holder":"rhdJ"}],"A2T1":[function(require,module,exports) {
 "use strict";var e=u(require("react")),r=u(require("react-dom"));require("bootstrap/dist/css/bootstrap.min.css");var t=u(require("./components/root"));function u(e){return e&&e.__esModule?e:{default:e}}var a=document.querySelector("#app");r.default.render(e.default.createElement(t.default,null),a);
 },{"react":"n8MK","react-dom":"NKHc","bootstrap/dist/css/bootstrap.min.css":"y3A0","./components/root":"pCZl"}]},{},["A2T1"], null)
-//# sourceMappingURL=/app.249ba127.js.map
+//# sourceMappingURL=/tensortest/app.249ba127.js.map
