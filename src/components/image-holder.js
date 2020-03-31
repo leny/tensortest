@@ -9,16 +9,16 @@
 import React, {useState, useCallback, useMemo} from "react";
 import useTensorflow from "../core/use-tensorflow";
 
-import {Image} from "react-bootstrap";
+import Image from "./image";
 
 const DEFAULT_IMAGE = "https://dummyimage.com/640x360/ddd/888";
 
 const ImageHolder = () => {
     const [isDraggedOver, setDraggedOver] = useState(false);
     const [image, setImage] = useState(DEFAULT_IMAGE);
-    const [, predictions] = useTensorflow(image !== DEFAULT_IMAGE && image);
-
-    console.log("predictions:", predictions);
+    const [analyzing, predictions] = useTensorflow(
+        image !== DEFAULT_IMAGE && image,
+    );
 
     const fileReader = useMemo(() => {
         const reader = new FileReader();
@@ -66,15 +66,15 @@ const ImageHolder = () => {
                 onDragEnd={handleDragOut}
                 onDrop={handleDrop}>
                 <Image
-                    style={{
-                        backgroundColor: isDraggedOver
-                            ? "orange"
-                            : "transparent",
-                    }}
+                    isHovered={isDraggedOver}
                     src={image}
-                    thumbnail
+                    predictions={predictions}
                 />
-                <figcaption>{"Drop an image to analyse"}</figcaption>
+                <figcaption>
+                    {analyzing
+                        ? "Analyzing image…"
+                        : "Drop an image to analyse"}
+                </figcaption>
             </figure>
         </div>
     );
