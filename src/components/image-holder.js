@@ -85,7 +85,7 @@ const ImageHolder = () => {
                     {$feedback}
                     {analyzing
                         ? "Analyzing image…"
-                        : "Drop an image to analyse"}
+                        : "Drop an image to analyze"}
                 </figcaption>
             </figure>
         </div>
