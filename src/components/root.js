@@ -14,7 +14,7 @@ import ImageHolder from "./image-holder";
 const Root = () => (
     <Container fluid className={"mt-3"}>
         <Row>
-            <Col sm={{span: 8, offset: 2}}>
+            <Col sm>
                 <ImageHolder />
             </Col>
         </Row>
