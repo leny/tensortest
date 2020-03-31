@@ -9,11 +9,13 @@
 import React from "react";
 import {Container, Row, Col} from "react-bootstrap";
 
+import ImageHolder from "./image-holder";
+
 const Root = () => (
     <Container fluid className={"mt-3"}>
         <Row>
-            <Col sm={{span: 4, offset: 4}}>
-                <p>{"Hello world!"}</p>
+            <Col sm={{span: 8, offset: 2}}>
+                <ImageHolder />
             </Col>
         </Row>
     </Container>
