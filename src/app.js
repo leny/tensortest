@@ -6,4 +6,11 @@
  * started at 31/03/2020
  */
 
-console.warn("Ho, hi!");
+import React from "react";
+import ReactDOM from "react-dom";
+
+import Root from "./components/root";
+
+const $app = document.querySelector("#app");
+
+ReactDOM.render(<Root />, $app);
